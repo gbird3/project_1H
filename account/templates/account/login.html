@@ -1,0 +1,15 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <form id="loginform" action="/account/login/" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+      <input class="btn btn-primary col-sm-4 col-sm-offset-4" type="submit" value="Login" />
+      <br><br>
+    </form>
+  </div>
+</div>
+{% endblock %}
