@@ -1,20 +1,45 @@
 from django.db import models
+from django.db import transaction
+from django.contrib.auth.models import AbstractUser
+from django.contrib import admin
+import datetime
 
-# Create your models here.
+
+#####################################################################
+###   User class
+
+
+# Define models here
 class Manufacturer(models.Model):
-    '''A list of all manufacturers of devices'''
-    name = models.CharField(max_length=100, null=True, blank=True)
+    '''An image for a product'''
+    manufacturer = models.TextField(null=True, blank=True)
+    def __str__(self):
+       '''Prints for debugging purposes'''
+       return 'Manufacturer: %s' % (self.manufacturer)
 
-class Device(models.Model):
-    '''A list of all the devices that the company has'''
-    location = models.CharField(max_length=100, null=True, blank=True)
-    organizationalTag = models.CharField(max_length=100, null=True, blank=True)
-    manufacturerId = models.ForeignKey(Manufacturer, related_name="manufacturers")
-    manPartNumber = models.DecimalField(null=True, blank=True, max_digits=10, decimal_places=0)
-    description = models.TextField(null=True, blank=True)
-    dateImplemented = models.DateField(null=True, blank=True)
+class Location(models.Model):
+  '''An image for a product'''
+  location = models.TextField(null=True, blank=True)
 
-class MaintenanceNote(models.Model):
-    '''A list of all maintenance notes for a device'''
-    deviceId = models.ForeignKey(Device, related_name="devices")
-    note = models.TextField(null=True, blank=True)
+  def __str__(self):
+     '''Prints for debugging purposes'''
+     return 'Location: %s' % (self.location)
+
+class Item(models.Model):
+  name = models.TextField(null=True, blank=True)
+  description = models.TextField(null=True, blank=True)
+  location = models.ForeignKey(Location, related_name='locations')
+  manufacturer = models.ForeignKey(Manufacturer, related_name='manufacturers')
+
+  def __str__(self):
+    '''Prints for debugging purposes'''
+    return 'Item: %s' % (self.name)
+
+class Note(models.Model):
+  note = models.TextField(null=True, blank=True)
+  date = models.DateTimeField(null=True, blank=True)
+  item = models.ForeignKey(Item, related_name='items')
+
+  def __str__(self):
+    '''Prints for debugging purposes'''
+    return 'Note: %s' % (self.note)
