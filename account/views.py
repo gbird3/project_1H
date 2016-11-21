@@ -17,7 +17,7 @@ def login_user(request):
             # url = request.urlparams[0]
             return HttpResponse('''
                 <script>
-                    window.location.href = '/'
+                    window.location.href = '/inventory/index'
                 </script>
             ''')
 
