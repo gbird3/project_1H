@@ -1,0 +1,29 @@
+You are using pip version 6.1.1, however version 9.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Collecting Django==1.9
+  Downloading Django-1.9-py2.py3-none-any.whl (6.6MB)
+Installing collected packages: Django
+Successfully installed Django-1.9
+You are using pip version 6.1.1, however version 9.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Collecting psycopg2
+  Downloading psycopg2-2.6.2.tar.gz (376kB)
+Installing collected packages: psycopg2
+  Running setup.py install for psycopg2
+Successfully installed psycopg2-2.6.2
+You are using pip version 6.1.1, however version 9.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Collecting boto3
+  Downloading boto3-1.4.1-py2.py3-none-any.whl (121kB)
+Requirement already satisfied (use --upgrade to upgrade): jmespath<1.0.0,>=0.7.1 in /usr/lib/python2.7/dist-packages (from boto3)
+Requirement already satisfied (use --upgrade to upgrade): botocore<1.5.0,>=1.4.1 in /usr/lib/python2.7/dist-packages (from boto3)
+Collecting s3transfer<0.2.0,>=0.1.0 (from boto3)
+  Downloading s3transfer-0.1.9-py2.py3-none-any.whl (53kB)
+Requirement already satisfied (use --upgrade to upgrade): python-dateutil<3.0.0,>=2.1 in /usr/lib/python2.7/dist-packages (from botocore<1.5.0,>=1.4.1->boto3)
+Requirement already satisfied (use --upgrade to upgrade): docutils>=0.10 in /usr/lib/python2.7/dist-packages (from botocore<1.5.0,>=1.4.1->boto3)
+Requirement already satisfied (use --upgrade to upgrade): futures<4.0.0,>=2.2.0 in /usr/lib/python2.7/dist-packages (from s3transfer<0.2.0,>=0.1.0->boto3)
+Requirement already satisfied (use --upgrade to upgrade): six in /usr/lib/python2.7/dist-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.5.0,>=1.4.1->boto3)
+Installing collected packages: s3transfer, boto3
+Successfully installed boto3-1.4.1 s3transfer-0.1.9
+You are using pip version 6.1.1, however version 9.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
