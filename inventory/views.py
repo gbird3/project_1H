@@ -23,8 +23,8 @@ def delete(request, id):
     try:
         item = Item.objects.get(id = id)
     except Item.DoesNotExist:
-        return HttpResponseRedirect('inventory/index/')
+        return HttpResponseRedirect('/inventory/index/')
 
     item.delete()
 
-    return HttpResponseRedirect('inventory/index/')
+    return HttpResponseRedirect('/inventory/index/')

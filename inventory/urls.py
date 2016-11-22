@@ -5,5 +5,5 @@ from . import views
 app_name = 'inventory'
 urlpatterns = [
     url(r'^index/$', views.view_inventory, name='index'),
-    url(r'^delete/([0-9]+)/$', views.delete, name='delete'),
+    url(r'^delete/([0-9]+)/$', views.delete, name='delete_inventory'),
 ]
