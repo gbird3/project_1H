@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+  <div class="grey-color">
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{ form.non_field_errors }}
+      </div>
+    {% endif %}
+    <div class="col-sm-8 col-sm-offset-2">
+      <form id="addNewArea" action="/inventory/edit/{{ item.id }}/" method="POST">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <br>
+        <div class="row">
+          <div class="col-sm-2 col-sm-offset-10"><input id="addItem" class="btn btn-primary" type="submit" value="Add Item" /></div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
