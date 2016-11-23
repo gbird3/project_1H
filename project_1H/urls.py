@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.http import HttpResponse, HttpResponseRedirect
 
 urlpatterns = [
+    url(r'^$', lambda r: HttpResponseRedirect('inventory/index/')),
     url(r'^admin/', admin.site.urls),
     url(r'^account/', include('account.urls')),
     url(r'^inventory/', include('inventory.urls')),
