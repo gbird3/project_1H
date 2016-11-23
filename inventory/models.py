@@ -23,8 +23,8 @@ class Location(models.Model):
 
 class Item(models.Model):
   name = models.CharField(null=True, blank=True, max_length=100)
-  organizationalTag = models.CharField(null=True, blank=True, max_length=100)
-  manufacturerPartNumber = models.CharField(null=True, blank=True, max_length=100)
+  organizationalTag = models.CharField(null=True, blank=True, max_length=10)
+  manufacturerPartNumber = models.CharField(null=True, blank=True, max_length=50)
   dateImplemented = models.DateField(null=True, blank=True, max_length=100)
   description = models.TextField(null=True, blank=True)
   location = models.ForeignKey(Location, related_name='locations')
