@@ -102,6 +102,7 @@ def editItem(request, itemId):
 
 @login_required(login_url='/account/login/')
 def viewNotes(request, itemId):
+	''' Shows a list of all the notes for a specific item '''
 	notes = Note.objects.all().filter(item = itemId)
 	item = Item.objects.get(id = itemId)
 
@@ -113,6 +114,7 @@ def viewNotes(request, itemId):
 
 @login_required(login_url='/account/login/')
 def addNotes(request, itemId):
+	'''Allows for adding a maintenance note to a specific item '''
 	form = NoteForm()
 	item = Item.objects.get(id = itemId)
 
